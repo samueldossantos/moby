@@ -222,10 +222,10 @@ COPY --from=docker-py /build/ /docker-py
 # this image, but currently CI is expecting to run this image. This should be
 # split out into a separate image, including all the `python-*` deps installed
 # above.
-RUN cd /docker-py \
-	&& pip install docker-pycreds==0.2.1 \
-	&& pip install yamllint==1.5.0 \
-	&& pip install -r test-requirements.txt
+#RUN cd /docker-py \
+#	&& pip install docker-pycreds==0.2.1 \
+#	&& pip install yamllint==1.5.0 \
+#	&& pip install -r test-requirements.txt
 
 ENV PATH=/usr/local/cli:$PATH
 ENV DOCKER_BUILDTAGS apparmor seccomp selinux
